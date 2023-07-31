@@ -1,0 +1,23 @@
+.service-card {
+    height: 250px;
+}
+
+.service-card img {
+    margin-top: 15px;
+    height: 50;
+    max-width: 50;
+
+}
+
+@media only screen and (max-width: 700px){
+    .service-card {
+      background-color: aqua;
+    }
+  }
+  
+  @media only screen and (max-width: 500px){
+    .service-card {
+      width: 100%;
+      background-color: blueviolet;
+    }
+  }
