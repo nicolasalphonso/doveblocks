@@ -28,10 +28,9 @@
     <div class="row">
     <!-- service 1 -->
         <div class="col">
-          <div class="card service-card" style="height: 250px">
-            <img src="{$block.settings.icon1.url}" style="margin-top: 15px"
-              alt="{$block.settings.title1}" title="" class="icon mx-auto" loading="lazy"
-              width="50" height="50" />
+          <div class="card service-card">
+            <img src="{$block.settings.icon1.url}" 
+              alt="{$block.settings.title1}" title="" class="icon mx-auto" loading="lazy" />
             <div class="card-body">
               <h5 class="card-title">{$block.settings.title1}</h5>
               <p class="card-text">
@@ -42,10 +41,9 @@
         </div>
     <!-- service 2 -->
             <div class="col">
-          <div class="card service-card" style="height: 250px">
-            <img src="{$block.settings.icon2.url}" style="margin-top: 15px"
-              alt="{$block.settings.title2}" title="" class="icon mx-auto" loading="lazy"
-              width="50" height="50" />
+          <div class="card service-card">
+            <img src="{$block.settings.icon2.url}" 
+              alt="{$block.settings.title2}" title="" class="icon mx-auto" loading="lazy" />
             <div class="card-body">
               <h5 class="card-title">{$block.settings.title2}</h5>
               <p class="card-text">
@@ -56,10 +54,9 @@
         </div>
         <!-- service 3 -->
             <div class="col">
-          <div class="card service-card" style="height: 250px">
-            <img src="{$block.settings.icon3.url}" style="margin-top: 15px"
-              alt="{$block.settings.title3}" title="" class="icon mx-auto" loading="lazy"
-              width="50" height="50" />
+          <div class="card service-card">
+            <img src="{$block.settings.icon3.url}" 
+              alt="{$block.settings.title3}" title="" class="icon mx-auto" loading="lazy" />
             <div class="card-body">
               <h5 class="card-title">{$block.settings.title3}</h5>
               <p class="card-text">
@@ -70,10 +67,9 @@
         </div>
         <!-- service 4 -->
         <div class="col">
-          <div class="card service-card" style="height: 250px">
-            <img src="{$block.settings.icon4.url}" style="margin-top: 15px"
-              alt="{$block.settings.title4}" title="" class="icon mx-auto" loading="lazy"
-              width="50" height="50" />
+          <div class="card service-card">
+            <img src="{$block.settings.icon4.url}" 
+              alt="{$block.settings.title4}" title="" class="icon mx-auto" loading="lazy" />
             <div class="card-body">
               <h5 class="card-title">{$block.settings.title4}</h5>
               <p class="card-text">
