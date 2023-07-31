@@ -24,12 +24,22 @@ class DoveBlocks extends Module //implements WidgetInterface
 
     public function install()
     {
-        return parent::install() && $this->registerHook('ActionRegisterBlock');
+        return parent::install() &&
+        // $this->registerHook('ActionRegisterThemeSettings') &&
+        // $this->registerHook('ActionQueueSassCompile') &&
+        // $this->registerHook('beforeRenderingClassicFeaturedProduct') &&
+        $this->registerHook('ActionRegisterBlock') &&
+        $this->registerHook('displayHeader');
     }
-
+    
     public function uninstall()
     {
-        return parent::uninstall() && $this->unregisterHook('ActionRegisterBlock');
+        return parent::uninstall() &&
+        // $this->unregisterHook('ActionRegisterThemeSettings') &&
+        // $this->unregisterHook('ActionQueueSassCompile') &&
+        // $this->unregisterHook('beforeRenderingClassicFeaturedProduct') &&
+        $this->unregisterHook('ActionRegisterBlock') &&
+        $this->unregisterHook('displayHeader');
     }
 
     // Register blocks here.
@@ -54,7 +64,7 @@ class DoveBlocks extends Module //implements WidgetInterface
                     'icon1' => [
                         'type' => 'fileupload',
                         'label' => 'Icon - 1',
-                        'path' => '$/modules/classicblocks/views/images/',
+                        'path' => '$/modules/doveblocks/views/images/',
                         'default' => [
                             'url' => 'https://via.placeholder.com/50x50',
                         ],
@@ -63,20 +73,20 @@ class DoveBlocks extends Module //implements WidgetInterface
                     'title1' => [
                         'type' => 'text',
                         'label' => 'Title service - 1',
-                        'default' => 'Service title',
+                        'default' => 'Service title 1',
                         'force_default_value' => true,
                     ],
                     'desc1' => [
                         'type' => 'text',
                         'label' => 'Add a small description - 1',
-                        'default' => 'Lorem ispum...',
+                        'default' => 'Lorem ispum... 1',
                         'force_default_value' => true,
                     ],
                     // service 2
                     'icon2' => [
                         'type' => 'fileupload',
                         'label' => 'Icon - 2',
-                        'path' => '$/modules/classicblocks/views/images/',
+                        'path' => '$/modules/doveblocks/views/images/',
                         'default' => [
                             'url' => 'https://via.placeholder.com/50x50',
                         ],
@@ -85,20 +95,20 @@ class DoveBlocks extends Module //implements WidgetInterface
                     'title2' => [
                         'type' => 'text',
                         'label' => 'Title service - 2',
-                        'default' => 'Service title',
+                        'default' => 'Service title 2',
                         'force_default_value' => true,
                     ],
                     'desc2' => [
                         'type' => 'text',
                         'label' => 'Add a small description - 2',
-                        'default' => 'Lorem ispum...',
+                        'default' => 'Lorem ispum... 2',
                         'force_default_value' => true,
                     ],
                     // service 3
                     'icon3' => [
                         'type' => 'fileupload',
                         'label' => 'Icon - 3',
-                        'path' => '$/modules/classicblocks/views/images/',
+                        'path' => '$/modules/doveblocks/views/images/',
                         'default' => [
                             'url' => 'https://via.placeholder.com/50x50',
                         ],
@@ -107,20 +117,20 @@ class DoveBlocks extends Module //implements WidgetInterface
                     'title3' => [
                         'type' => 'text',
                         'label' => 'Title service - 3',
-                        'default' => 'Service title',
+                        'default' => 'Service title 3',
                         'force_default_value' => true,
                     ],
                     'desc3' => [
                         'type' => 'text',
                         'label' => 'Add a small description - 3',
-                        'default' => 'Lorem ispum...',
+                        'default' => 'Lorem ispum... 3',
                         'force_default_value' => true,
                     ],
                     // service 4
                     'icon4' => [
                         'type' => 'fileupload',
                         'label' => 'Icon - 4',
-                        'path' => '$/modules/classicblocks/views/images/',
+                        'path' => '$/modules/doveblocks/views/images/',
                         'default' => [
                             'url' => 'https://via.placeholder.com/50x50',
                         ],
@@ -129,13 +139,13 @@ class DoveBlocks extends Module //implements WidgetInterface
                     'title4' => [
                         'type' => 'text',
                         'label' => 'Title service - 4',
-                        'default' => 'Service title',
+                        'default' => 'Service title 4',
                         'force_default_value' => true,
                     ],
                     'desc4' => [
                         'type' => 'text',
                         'label' => 'Add a small description - 4',
-                        'default' => 'Lorem ispum...',
+                        'default' => 'Lorem ispum... 4',
                         'force_default_value' => true,
                     ],
 
@@ -154,6 +164,13 @@ class DoveBlocks extends Module //implements WidgetInterface
         ];
 
         return $blocks;
+    }
+
+    // register css and js
+    public function hookdisplayHeader($params)
+    {
+        $this->context->controller->registerStylesheet('modules-servicescards', 'modules/' . $this->name . '/views/css/homepage_services.css', ['media' => 'all', 'priority' => 150]);
+        //$this->context->controller->registerJavascript('modules-servicescards', 'modules/' . $this->name . '/views/js/homepage_services.js', ['position' => 'bottom', 'priority' => 150]);
     }
 
 }
